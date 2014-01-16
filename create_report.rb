@@ -15,6 +15,7 @@ class Copy_file < Thor
   end
 
   #TODO 日報だけじゃなくて週報・月報も src になりうるので、src は外から指定するようにしたい。それか、オプションにする。
+  #TODO コマンド名はいずれ変える。
   def nippo
     copy_file "daily_report_template.md", "#{Time.now.strftime("%Y%m%d")}.md"
   end
