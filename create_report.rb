@@ -1,6 +1,5 @@
 require 'thor'
 require 'pry'
-require 'date'
 
 # とりあえず、Thor を使ってファイルをコピーする練習
 class Copy_file < Thor
@@ -17,8 +16,7 @@ class Copy_file < Thor
 
   #TODO 日報だけじゃなくて週報・月報も src になりうるので、src は外から指定するようにしたい。それか、オプションにする。
   def copy
-    today = Date.today
-    copy_file "daily_report_template.md", "#{today.year}#{today.month}#{today.day}.md"
+    copy_file "daily_report_template.md", "#{Time.now.strftime("%Y%m%d")}.md"
   end
 end
 
