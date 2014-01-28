@@ -16,8 +16,21 @@ class Copy_file < Thor
 
   #TODO 日報だけじゃなくて週報・月報も src になりうるので、src は外から指定するようにしたい。それか、オプションにする。
   #TODO コマンド名はいずれ変える。
+  #TODO IO#readlinesを使って日付を入れて返すみたいにしたい
   def nippo
-    copy_file "daily_report_template.md", "#{Time.now.strftime("%Y%m%d")}.md"
+    file = File.new("#{Time.now.strftime("%Y%m%d")}.md", 'w+')
+    file.print <<-EOS
+# #{Time.now.strftime("%Y/%m/%d")}
+## やったこと
+
+## 今の気分など
+
+    EOS
+
+    #copy_file "daily_report_template.md", "#{Time.now.strftime("%Y%m%d")}.md", 'w+'
+    #f = File.open("#{Time.now.strftime("%Y%m%d")}.md", 'a+')
+    #f.rewind
+    #f.puts "f.lineno is #{f.lineno}"
   end
 end
 
