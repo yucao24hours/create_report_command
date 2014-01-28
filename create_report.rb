@@ -1,7 +1,6 @@
 require 'thor'
 require 'pry'
 
-# とりあえず、Thor を使ってファイルをコピーする練習
 class Copy_file < Thor
   include Thor::Actions
 
@@ -14,9 +13,7 @@ class Copy_file < Thor
     File.dirname(__FILE__)
   end
 
-  #TODO 日報だけじゃなくて週報・月報も src になりうるので、src は外から指定するようにしたい。それか、オプションにする。
   #TODO コマンド名はいずれ変える。
-  #TODO IO#readlinesを使って日付を入れて返すみたいにしたい
   def nippo
     default_text =<<-EOS
 # #{Time.now.strftime("%Y/%m/%d")}
