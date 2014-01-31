@@ -1,5 +1,6 @@
 require 'thor'
 require 'pry'
+require 'unindent'
 
 class CreateReport < Thor
   include Thor::Actions
@@ -15,11 +16,11 @@ class CreateReport < Thor
 
   #TODO コマンド名はいずれ変える。
   def nippo
-    default_text =<<-EOS
-# #{Time.now.strftime("%Y/%m/%d")}
-## やったこと
+    default_text =<<-EOS.unindent
+      # #{Time.now.strftime("%Y/%m/%d")}
+      ## やったこと
 
-## 今の気分など
+      ## 今の気分など
 
     EOS
     create_file "/Users/yucao24hours/work/sp/almost_daily_report/yucato/#{Time.now.strftime("%Y%m%d")}.md", default_text
