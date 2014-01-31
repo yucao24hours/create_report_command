@@ -22,7 +22,7 @@ class Copy_file < Thor
 ## 今の気分など
 
     EOS
-    create_file "/Users/yucao24hours/work/sp/almost_daily_report/#{Time.now.strftime("%Y%m%d")}.md", default_text
+    create_file "/Users/yucao24hours/work/sp/almost_daily_report/yucato/#{Time.now.strftime("%Y%m%d")}.md", default_text
 
   end
 end
