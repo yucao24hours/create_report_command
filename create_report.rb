@@ -1,7 +1,7 @@
 require 'thor'
 require 'pry'
 
-class Copy_file < Thor
+class CreateReport < Thor
   include Thor::Actions
 
   desc 'nippo', 'Create new nippo file including specify date'
@@ -27,4 +27,4 @@ class Copy_file < Thor
   end
 end
 
-Copy_file.start
+CreateReport.start
